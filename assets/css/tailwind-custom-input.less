@@ -1,0 +1,373 @@
+ .select2-container {
+    /* The container where the selectbox is housing*/
+  @apply relative box-border align-middle inline-block m-0 mb-2 sm:leading-3;
+  }
+  .select2-container .select2-selection--single {
+    /* Selection box itself */
+  @apply box-border cursor-pointer block select-none shadow border rounded;
+  }
+
+  .select2-container .select2-selection--single .select2-selection__rendered {
+    /* DIV inside Selection box with text, clear button and arrow down*/
+  @apply block h-6 pl-1 pr-6 truncate;
+  }
+  .select2-container .select2-selection--single .select2-selection__clear {
+    /* The DIV where the X is housing to clear the chosen option */
+  @apply relative -m-1;
+  }
+  .select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered {
+    /*@apply;*/
+  }
+
+  .select2-container .select2-selection--multiple {
+  @apply box-border overflow-hidden h-4 cursor-pointer block select-none;
+  }
+
+  .select2-container .select2-selection--multiple .select2-selection__rendered {
+  @apply inline-block truncate whitespace-nowrap;
+  }
+  .select2-container .select2-search--inline {
+    /* Search box*/
+  @apply float-left;
+  }
+  .select2-container .select2-search--inline .select2-search__field {
+  @apply box-border border-0 w-full text-sm;
+  }
+  .select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button {
+  @apply appearance-none;
+  }
+
+  .select2-dropdown {
+    /* Dropdown area after the arrow down is clicked */
+  @apply absolute block w-auto box-border bg-white dark:bg-slate-700 border-solid border border-gray-200 z-50 float-left;
+  }
+
+  .select2-results {
+  @apply block text-black dark:text-gray-300;
+  }
+
+  .select2-results__options {
+  @apply list-none m-0 p-0;
+  }
+
+  .select2-results__option {
+    /* The rows with results that you see after dropdown.
+	Increase p-1 to p-2 to have more space between results */
+  @apply select-none rounded-md block w-full py-3 px-3 text-gray-700 sm:text-sm sm:leading-3;
+  }
+  .select2-results__option[aria-selected] {
+  @apply cursor-pointer;
+  }
+
+  .select2-container--open .select2-dropdown {
+    /* Dropdown container opened and results are shown*/
+  @apply mt-3 left-0;
+  }
+
+  .select2-container--open .select2-dropdown--above {
+    /* The left and right borders of the option rows */
+  @apply rounded border-gray-400 dark:border-gray-700 shadow;
+  }
+
+  .select2-container--open .select2-dropdown--below {
+    /* The left and right borders of the option rows */
+  @apply rounded border-gray-400 dark:border-gray-700 shadow;
+  }
+
+  .select2-search--dropdown {
+    /* Search dropdown element*/
+  @apply block p-2;
+  }
+  .select2-search--dropdown .select2-search__field {
+    /* Search box itself where you can enter text*/
+  @apply h-10 p-1 bg-white dark:bg-slate-500 box-border rounded border-2 border-blue-300 dark:border-gray-700 dark:text-gray-200 outline-none;
+    width: 100%;
+  }
+  .select2-search--dropdown .select2-search__field::-webkit-search-cancel-button {
+  @apply appearance-none;
+  }
+  .select2-search--dropdown.select2-search--hide {
+  @apply hidden;
+  }
+
+  .select2-close-mask {
+  @apply block w-12 min-w-full m-0 p-0;
+    border: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+    opacity: 0;
+    z-index: 99;
+    background-color: #fff;
+    filter: alpha(opacity=0);
+  }
+
+  .select2-hidden-accessible {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important; }
+
+
+  /*
+
+	  Default template settings:
+
+  */
+
+  .select2-container--default .select2-selection--single {
+    /* Selection bar - Self */
+  @apply p-2 h-10 bg-white dark:bg-slate-700 border border-solid dark:border-gray-700;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    /* Selection bar - Text color of the item you selected from the results */
+  @apply text-gray-700 dark:text-gray-200;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__clear {
+    /* Selection bar - Clear button - If this property is enabled*/
+  @apply cursor-pointer float-right text-red-700;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__placeholder {
+    /* Selection bar - Color of the placeholder text before selection - If this property is enabled */
+  @apply text-gray-600 dark:text-gray-300;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__arrow {
+    /* Selection bar - DIV where the arrow pointing down is living*/
+  @apply absolute right-0 top-0 h-10 w-8;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    /* Arrow is a CSS triangle that does not exists in Tailwind without a package */
+  @apply absolute border-solid h-0 w-0 border-t-4 border-r-4 border-b-0 border-l-4;
+    border-color: #000 transparent transparent transparent;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -2px;
+    top: 50%;
+  }
+
+  .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear {
+    /* Selection bar - Clear button - If this property is enabled from right to left*/
+  @apply float-left ml-4;
+  }
+
+  .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+    /* Placement of the dropdown arrow when in rtl mode */
+  @apply left-0 right-auto;
+  }
+
+  .select2-container--default.select2-container--disabled .select2-selection--single {
+    /* Selection by property disabled*/
+  @apply cursor-default bg-gray-300;
+  }
+  .select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear {
+    /* Selection bar - Hide the clear cross when selection bar is disabled*/
+  @apply hidden;
+  }
+
+  .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #888 transparent;
+    border-width: 0 4px 5px 4px;
+  }
+
+  .select2-container--default .select2-selection--multiple {
+  @apply min-h-full h-full block w-full rounded-md py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-3;
+  }
+
+  .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+  @apply box-border list-none m-0 min-w-full;
+  }
+  .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+  @apply list-none py-1.5;
+  }
+  .select2-container--default .select2-selection--multiple .select2-selection__clear {
+  @apply float-right cursor-pointer mt-1 mr-2 p-1;
+  }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  @apply bg-white dark:bg-slate-700 text-gray-700 dark:text-gray-200 border cursor-default rounded my-1 mr-1 px-2 float-left;
+  }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  @apply text-gray-700 dark:text-gray-200 cursor-pointer inline-block mr-1;
+  }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+  @apply text-gray-700 dark:text-gray-200;
+  }
+  .select2-container--default.select2-container--focus .select2-selection--multiple {
+  @apply block w-full rounded-md py-1.5 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-3;
+  }
+
+  .select2-container--default.select2-container--disabled .select2-selection__choice__remove {
+  @apply hidden;
+  }
+  .select2-container--classic .select2-selection--multiple .select2-selection__choice {
+  @apply bg-gray-300 border-2 dark:border-gray-700 shadow rounded float-left cursor-default mt-1 mr-1 px-1;
+  }
+  .select2-container--default .select2-search--dropdown .select2-search__field {
+    /* The border of the search textbox */
+  @apply border-solid;
+  }
+
+  .select2-container--default .select2-search--inline .select2-search__field {
+    /* Search textbox */
+  @apply border-none bg-transparent outline-none shadow-none select-text;
+  }
+
+  .select2-container--default .select2-results > .select2-results__options {
+    /* Hight of the dropdown zone where the options or results are visible */
+  @apply h-full max-h-32 overflow-y-auto;
+  }
+
+  .select2-container--default .select2-results__option[role=group] {
+    /* No clue what this does */
+  @apply p-0;
+  }
+
+  .select2-container--default .select2-results__option[aria-disabled=true] {
+  @apply text-gray-700;
+  }
+
+  .select2-container--default .select2-results__option[aria-selected=true] {
+    /* The already selected option row color */
+  @apply bg-gray-300 dark:text-gray-700;
+  }
+  .select2-results__option--selected {
+  @apply hidden;
+  }
+  .select2-container--default .select2-results__option .select2-results__option {
+    padding-left: 1em;
+  }
+  .select2-container--default .select2-results__option .select2-results__option .select2-results__group {
+    padding-left: 0;
+  }
+  .select2-container--default .select2-results__option .select2-results__option .select2-results__option {
+    margin-left: -1em;
+    padding-left: 2em;
+  }
+  .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+    margin-left: -2em;
+    padding-left: 3em;
+  }
+  .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+    margin-left: -3em;
+    padding-left: 4em;
+  }
+  .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+    margin-left: -4em;
+    padding-left: 5em;
+  }
+  .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+    margin-left: -5em;
+    padding-left: 6em;
+  }
+
+  .select2-container--default .select2-results__option--highlighted[aria-selected] {
+    /* Background color and text color of the options rows when select is open */
+  @apply bg-gray-100 dark:bg-gray-500 text-gray-700 dark:text-gray-200;
+  }
+
+  .select2-container--default .select2-results__group {
+    /* Have no idea what this is for */
+  @apply cursor-default block;
+    padding: 6px; }
+
+  .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks ul.subsubsub {
+    @apply flex flex-wrap items-start justify-start list-none m-0 p-3 pl-0;
+  }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks ul.subsubsub li {
+    @apply inline-block p-0 ml-1.5 mr-1.5;
+  }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks ul.subsubsub li:first-child {
+    @apply ml-0;
+  }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks ul.subsubsub li a {
+    @apply text-gray-700 hover:text-indigo-600;
+  }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks ul.subsubsub li a.current {
+    @apply text-indigo-600;
+  }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks form#action-scheduler-filter p.search-box {
+   display:none;
+  }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks form#action-scheduler-filter .tablenav .tablenav-pages {
+   @apply py-3 px-3 pl-0 text-right;
+ }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks form#action-scheduler-filter .tablenav .tablenav-pages span.displaying-num {
+   @apply mr-2;
+ }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks form#action-scheduler-filter .tablenav .tablenav-pages .pagination-links {
+   @apply isolate inline-flex -space-x-px rounded-md shadow-sm;
+ }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks form#action-scheduler-filter .tablenav .tablenav-pages .pagination-links > span:not(.screen-reader-text), .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks form#action-scheduler-filter .tablenav .tablenav-pages .pagination-links > a {
+  @apply relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex;
+ }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks form#action-scheduler-filter .tablenav .bulkactions {
+   @apply py-3 px-3 pl-0 ;
+ }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks form#action-scheduler-filter select#bulk-action-selector-top,
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks form#action-scheduler-filter select#bulk-action-selector-bottom {
+   @apply block inline-block rounded-md py-3 px-3 pl-3 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6;
+ }
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks form#action-scheduler-filter #doaction,
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks form#action-scheduler-filter #doaction2 {
+   @apply rounded-full m-2 bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 hover:cursor-pointer;
+ }
+
+ .screen-reader-text {
+  @apply sr-only;
+ }
+ body.revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks table.wp-list-table.fixed {
+  @apply min-w-full divide-y divide-gray-300;
+ }
+ body.revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks table.wp-list-table.fixed tbody {
+   @apply divide-y divide-gray-200 bg-white;
+ }
+ body.revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks table.wp-list-table.fixed tbody td {
+    @apply px-3 py-5 text-sm text-gray-500;
+ }
+ body.revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks table.wp-list-table.fixed {
+   position: relative;
+ }
+ /*
+ Screen options
+ */
+ .revive-so-admin-page.revive-so_page_reviveso-scheduled-tasks #message.notice {
+ @apply pointer-events-auto flex w-auto max-w-md rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5;
+ }
+ .revive-so-admin-page #screen-meta {
+ @apply border border-t-0 border-gray-300 py-3 px-3 -ml-4 -mr-4 hidden;
+ }
+
+ .revive-so-admin-page #screen-options-link-wrap {
+ @apply text-right ;
+ }
+ .revive-so-admin-page #screen-options-link-wrap #show-settings-link {
+ @apply rounded-md rounded-t-none border border-gray-300 py-1.5 px-1.5 text-sm border-t-0;
+ }
+ .revive-so-admin-page #screen-options-apply {
+   @apply rounded-full bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 hover:cursor-pointer;
+ }
+ .revive-so-admin-page #adv-settings > fieldset {
+   @apply mb-4;
+ }
+ .revive-so-admin-page #adv-settings label {
+   @apply mr-4;
+ }
+ .revive-so-admin-page #adv-settings input:not([type="submit"]) {
+   @apply mr-2 w-auto rounded-md border-0 py-3 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6;
+ }
+ /*
+ End screen options
+ */
+ .revive-so-admin-page #wpbody-content .wrap > h2,
+ .revive-so-admin-page #wpbody-content .wrap > h1 {
+   @apply py-3;
+ }
